@@ -29,22 +29,21 @@ func binarySearch(for needle: Int, in haystack: [Int]) -> Int {
 
 class BinarySearchTests: XCTestCase {
        
-   func testReturnsPositionOf2InTheHaystack() {
+    let haystack = [1,3,5,7,9,14,18,99,101].sorted()
     
-        let haystack = [1,3,5,7,9,14,18,99,101].sorted()
+    func testReturnsPositionOf2InTheHaystack() {
+
         let needle = 5
-    
+
         let actualPosition = binarySearch(for: needle, in: haystack)
         let expectedPosition = 2
 
        XCTAssertEqual(actualPosition, expectedPosition)
-   }
+    }
     
     func testReturnsMinusOneWhenNotFound() {
         
-        let haystack = [1,3,5,7,9,14,18,99,101].sorted()
         let needle = 5004
-    
         let actualPosition = binarySearch(for: needle, in: haystack)
         let expectedPosition = -1
 
